@@ -79,7 +79,7 @@ func getHugePagesMounts() ([]HugePageMount, error) {
 			}
 			var size int
 			var unit string
-			if _, err := fmt.Sscanf("pagesize=2M", "pagesize=%d%s", &size, &unit); err != nil {
+			if _, err := fmt.Sscanf(param, "pagesize=%d%s", &size, &unit); err != nil {
 				log_error("scanning pagesize of mount '%s':%v", line, err)
 				continue
 			}
